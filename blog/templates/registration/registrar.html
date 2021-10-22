@@ -1,0 +1,43 @@
+{% extends 'blog/base.html' %}
+{%load static%}
+{% block content %}
+    <head>
+        <link rel="stylesheet" href="{% static 'css/registrar.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+     <div class="estructura">
+            <img class="avatar" src="{% static 'img/mascota.png' %}" alt="avatar potro">
+            <h1 class="titulo">Registrate</h1>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <!--first_name','last_name','email','username','password1','password2'-->
+                <div>
+                    <label>Nombre</label>
+                    <input type="text" name="first_name" placeholder="Nombre(S)">
+                </div>
+                <div>
+                    <label>Apellidos</label>
+                    <input type="text" name="last_name" placeholder="Apellidos ">
+                <div>
+                 <div>
+                    <label>Correo electrónico</label>
+                    <input type="text" name="email" placeholder="correo electronico">
+                </div>
+                <div>
+                    <label for="username">Nombre de usuario</label>
+                    <input type="text" name="username" placeholder="sin espacios">
+                </div>
+                <div>
+                    <label>Contraseña</label>
+                    <input type="password" name="password1" placeholder="8 caracteres minimo">
+                <div>
+                <div>
+                    <label>Confirmar contraseña</label>
+                    <input type="password" name="password2" placeholder="8 caracteres minimo">
+                <div>
+                <input type="submit" value="Registrar" class="boton" placeholder="Registrar">
+            </form>
+        </div>
+    </body>
+{% endblock %}

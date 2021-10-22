@@ -1,0 +1,88 @@
+.estructura{
+    background: black;
+    color:aliceblue;
+    width: 400px;
+    height: 450px;
+    top: 400px;
+    left: 47%;
+    position: absolute;
+    transform: translate(-45%, -50%);
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 70px 40px;
+}
+
+.titulo{
+    top: 20px;
+    font-size: 18px;
+    text-align: center;
+    font-family: 'Century Gothic';
+    font-weight: bold;
+}
+.avatar{  
+    width: 100px;
+    height: 100px;
+    border-radius:50%;
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translate(-50%, +10%);
+}
+.input{
+    color: black;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 7px;
+    font-size: 12px;
+    padding: 10px 15px;
+}
+.boton {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: bold;
+    top: 20px;
+    padding: 10px 15px;
+    left: 50%;
+    font-size: 13px;
+    cursor: pointer;
+    text-align: center;	
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #72f24b;
+    border: none;
+    border-radius: 40px 10px;
+    box-shadow: 0 9px #999;
+   
+}
+.botonpos{
+    left: 50%;
+    position: absolute;
+    transform: translate(-45%, -55%);
+}
+.boton:hover {background-color: #3e8e41}
+  
+.boton:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.qr{
+    width: auto;
+    height: auto;
+}
+.fondoqr{
+    top: 20px;
+    text-align: center;
+    background: white;
+    width: 230px;
+    height: 230px;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, +5%);
+    border-radius: 10px;
+}
+.fondoqr p {
+    color: #3e8e41;
+}

@@ -1,0 +1,82 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>Blog de la Ingenieria en Sistemas Inteligentes</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/icon.ico' %}">
+        <script src="https://kit.fontawesome.com/7e5b2d153f.js" crossorigin="anonymous"></script>
+        <script defer src="{% static 'script/index.js'%}"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header class="header">
+            <div class="page-header">
+                <img class="logo" src="{% static 'img/uaem.png' %}" >
+                <h1><a href="/">Blog de la Ingeniería en Sistemas Inteligentes</a></h1>   
+            </div>
+            <nav class="navegar">
+                {% if user.is_authenticated %}
+                    <a href="/" class="casita">
+                        <span class="glyphicon glyphicon-home" ></span>
+                    </a>
+                    <button class="toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-menu">
+                        <li class="nav-menu-item">
+                            <a href="{% url 'post_new' %}" class="nav-menu-link">Nuevo Post</a>
+                        </li>
+                        <li class="nav-menu-item">
+                            <a href="{% url 'enfermedad_form' %}" class="nav-menu-link">LLenar seguimiento</a>
+                        </li>
+                        {% if user.is_staff %}
+                            <li class="nav-menu-item">
+                                <a href="{% url 'generadorQr' %}" class="nav-menu-link">Crear QR</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-menu-item">
+                                <a href="{% url 'enfermedad_list'%}" class="nav-menu-link">leer QR</a>
+                            </li>
+                        {% endif %}
+                        <li class="nav-menu-item"> 
+                            <a href="#" class="nav-menu-link">Usuario: {{ user.username }} </a>
+                        </li>
+                        <li class="nav-menu-item">
+                            <a href="{% url 'logout' %}" class="nav-menu-link">Cerrar sesión</a>
+                        </li>
+                    </ul>     
+                {% else %}
+                    <a href="/" class="casita">
+                        <span class="glyphicon glyphicon-home"></span>
+                    </a>
+                    <button class="toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-menu">
+                        <li class="nav-menu-item">
+                            <a href="{% url 'login' %}" class="nav-menu-link">Iniciar sesión</a>
+                        </li>
+                        <li class="nav-menu-item">
+                            <a href="{% url 'registrar_usuario' %}"class="nav-menu-link" >Registrar</a>
+                        </li>
+                    </ul>
+                {% endif %}
+            </nav>
+            <hr></hr>
+        </header>
+        <div class="contenido">
+            {%block content%}
+            {%endblock%}
+        </div>
+        <hr>
+        <div class="pie">
+            <footer>
+                <p>Trabajo realizado en servicio social por el alumno Eduardo Balleza Cervantes bajo la dirección del profesor Efren Gonzalez Gomez </p>
+            </footer>    
+        </div>
+    </body>
+</html>

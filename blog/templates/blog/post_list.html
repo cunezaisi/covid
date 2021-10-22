@@ -1,0 +1,38 @@
+{% extends 'blog/base.html' %}
+{%load static%}
+{% block content %}
+    <head>
+        <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    </head>
+    <body>
+        <div class="">
+            {% if user.is_authenticated %}
+                <div class="row">
+                    <div class="bloque">
+                        
+                        {% for post in posts %}
+                            
+                            <div class="estructura">
+                                <div class="datos">
+                                    <h1 class="autor">{{ post.author }}</h1>
+                                    <h2 class="date">{{ post.published_date }}</h2>   
+                                </div>
+                                <div class="mostrar">
+                                    <h2 class="titulo">{{ post.title }}</h2>
+                                    <hr class="separador">
+                                    <p class="texto">{{ post.text|linebreaksbr }}</p>
+                                </div>
+                            </div>
+                            <hr class="hr">
+                        {% endfor %}
+                    </div>
+                </div>
+            {% else %}
+                <div class ="titulo">
+                    <h1>¡Bienvenidos!</h1>
+                    <h2>Inicia sesion o registrate para poder compartir tu experiencia con la enfermedad de Covid-19</h2>
+                </div>
+            {% endif %}
+        </div> 
+    </body>
+{% endblock %}

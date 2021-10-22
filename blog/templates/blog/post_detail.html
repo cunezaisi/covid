@@ -1,0 +1,30 @@
+{% extends 'blog/base.html' %}
+{%load static%}
+{% block content %}
+    <head>
+        <link rel="stylesheet" href="{% static 'css/edicion.css' %}">
+    </head>
+    <body>
+        <div class="estructura">
+            {% if post.published_date %}
+                <div class="datos">
+                    <h1 class="autor">{{ post.author }}</h1>
+                    <h2 class="date">{{ post.published_date }}</h2>
+                </div>
+            {% endif %}
+            <div class="mostrar">
+                <h2 class="titulo">{{ post.title }}</h2>
+                <hr class="separador">
+                <p class="texto">{{ post.text|linebreaksbr }}</p>
+            </div>
+            {% if user.is_authenticated %}
+                <div class="boton1">
+                    <a class="lapiz"  href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+                </div>
+                <div class="boton2">
+                    <a href="/"><input type="submit" value="Publicar" class="boton"></a>
+                </div>
+            {% endif %}
+        </div>
+    </body>
+{% endblock %}

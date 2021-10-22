@@ -1,0 +1,29 @@
+{% extends 'blog/base.html' %}
+{%load static%}
+{% block content %}
+    <head>
+        <link rel="stylesheet" href="{% static 'css/nuevo.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="estructura">
+            <img class="avatar" src="{% static 'img/postear.png' %}" alt="avatar potro">
+            <h1 class="titulo">Nueva publicación</h1>
+
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div>
+                    <label for="title">Titulo</label>
+                    <input type="text" name="title" placeholder="Ingresa el titulo de la publicación">
+                </div>
+                <div>
+                    <label for="text">Contenido</label>
+                    <textarea type="textarea" name="text" placeholder="Comparte tu experiencia"></textarea>
+                <div>
+               
+                <input type="submit" value="Publicar" class="boton" placeholder="Publicar">
+            </form>
+        </div>
+    </body>
+
+{% endblock %}

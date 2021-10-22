@@ -1,0 +1,47 @@
+{% extends 'blog/base.html'%}
+{%load static%}
+{% block content%}
+    <head>
+        <link rel="stylesheet" href="{% static 'css/seguimiento.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+     <div class="estructura">
+            <img class="avatar" src="{% static 'img/segui.png' %}" alt="avatar potro">
+            <h1 class="titulo">Seguimiento</h1>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" placeholder="Nombre completo">
+                </div>
+                <div>
+                    <label for="nombreEnfermedad">Nombre de la enfermedad</label>
+                    <input type="text" name="nombreEnfermedad" placeholder="Nombre de la enfermedad">
+                <div>
+                 <div>
+                    <label for="sexo">Sexo</label>
+                    <input type="text" name="sexo" placeholder="sexo">
+                </div>
+                <div>
+                    <label for="edad">Edad</label>
+                    <input type="number" name="edad" placeholder="años cumplidos">
+                </div>
+                <div>
+                    <label for="inicio_sintomas">fecha de inicio de los sintomas</label>
+                    <input type="date" name="inicio_sintomas" placeholder="¿Cúando iniciaron los malestares?">
+                <div>
+                <div>
+                    <label for="fin_sintomas">fecha de fin de los sintomas</label>
+                    <input type="date" name="fin_sintomas" placeholder="¿Cúando finalizaron los sintomas?">
+                <div>
+                <div>
+                    <label for="vacunado">¿Ya esta vacunado?</label>
+                    <input type="checkbox" name="vacunado">
+                <div>
+                <input type="submit" value="Guardar seguimiento" class="boton">
+            </form>
+        </div>
+    </body>
+
+{%endblock%}

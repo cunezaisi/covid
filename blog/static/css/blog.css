@@ -1,0 +1,172 @@
+body{
+    font-family: 'Century Gothic';
+    min-height: 100vh;
+    margin:0;
+    background: radial-gradient(circle at 0 0,#264f5e 45%,#72f24b);
+    padding: 180px 20px 0;
+}
+.header{
+    height: 50px;
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+.page-header {
+    margin-top: 0;   
+    display: flex;
+}
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active{
+    color: #faf9f2;
+    font-size: 25px;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    padding-right: 1%;
+}
+
+.logo{
+    margin-top: 5px;
+    margin-left: 50px;
+    margin-right: 0px;
+    width: 85px;
+    height: 65px;
+}
+.navegar{
+    margin: 0 5px;
+    display: flex;
+    justify-content: space-between;
+    font-family:'Century Gothic';
+}
+.casita{
+    color:white;
+    background: none;
+    border: none;
+    font-size: 27px;
+    padding: 0 50px;
+    line-height: 25px;
+    cursor: pointer;
+    display: flexbox;
+}
+.casita:hover, .casita:active{
+    color: #72f24b;
+    transition: 0.5s;
+}
+.nav-menu{
+    display: flex;
+    margin-right: 30px;
+    list-style: none;
+    
+}
+.nav-menu-item{
+    line-height: 15px;
+    font-family:'Copperplate Gothic';
+    font-size: 25px;
+    width: max-content;
+}
+.nav-menu-link{
+    padding: 0px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: #faf9f2;
+    font-family:'Copperplate Gothic';
+    font-size: 20px;
+    line-height: 10px;
+    width: max-content;
+}
+.nav-menu-link:hover,  .nav-menu-link:active{
+   
+    color: #72f24b;
+    transition: 0.5s;
+}
+.toggle{
+    color:white;
+    background: none;
+    border: none;
+    font-size: 10px;
+    padding: 0 20px;
+    line-height: 10px;
+    cursor: pointer;
+    display: none;
+}
+hr{
+    width:100% ;
+    color:#000000;
+}
+
+@media (max-width: 768px) {
+    body{
+        padding: 200px 20px 0;
+    }
+    .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active{
+        line-height: 20px;
+        font-size: 15pt;
+        margin-left: 5px;
+    }
+    .logo{
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-right: 20;
+        width: 60px;
+        height: 45px;
+    }
+    .casita{
+        font-size: 23px;
+        padding: 0 50px;
+        line-height: 50px;
+        cursor: pointer;
+        display: flexbox;
+    }
+    .nav-menu{
+        position:fixed;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 50px;
+        background: linear-gradient(45deg,#2f55d5 , #349bb6,#4ce199);
+        left: 0;
+        top: 143px;
+        width: 100%;
+        left: 100%; 
+        padding: 10px 0;
+        height: 100%;
+        overflow-y: auto;
+        transition: left 0.4s;
+    }
+    .nav-menu-item{  
+        position: relative;
+        line-height: 40px;
+        font-size: 15px;
+    }
+    .nav-menu-link:hover,  .nav-menu-link:active{
+        position: relative;
+        background: none;
+        color: #08252fd8;
+    }
+    .toggle{
+        margin-right: 20px;
+        font-size: 25px;
+        display: block;
+    }
+    .toggle:hover, .toggle:active{ 
+        transition: 0.5s;
+    }
+    .navegar_active{
+        left: 0;
+    }
+    .pie{
+        background-color: #292C44;
+        position: absolute;
+        display: inline-block;
+        bottom: 0;
+        width: 100%;
+        height: 40px;
+        color: white;
+    }
+}
+
+@media (max-width: 310px) {
+    .nav-menu{
+        top: 185px;
+    }
+}
